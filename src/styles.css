@@ -90,3 +90,11 @@ color: white;
   background-image: url(https://images.pexels.com/photos/5245865/pexels-photo-5245865.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
 font-family: Montserrat;
 }
+.link {
+  font-weight: bold;
+  color: purple;
+
+}
+.signoff {
+  color: purple;
+}
