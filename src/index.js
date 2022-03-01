@@ -46,6 +46,29 @@ function showTemperature(response) {
 
 }
 
+function toggleC(event) {
+  event.preventDefault();
+  let temperInfo = document.querySelector("#tValue");
+  temperInfo.innerHTML = "11";
+  
+}
+ let celsChange = document.querySelector("#cels");
+  celsChange.addEventListener("click", toggleC); 
+
+
+
+function toggleF(event) {
+  event.preventDefault();
+  let tempInfo = document.querySelector("#tValue");
+  let farTemp = (tempInfo.innerHTML * 9) / 5 + 32;
+  tempInfo.innerHTML = Math.round(farTemp);
+}
+let farChange = document.querySelector("#far");
+farChange.addEventListener("click", toggleF);
+
+
+
+
 function showPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;

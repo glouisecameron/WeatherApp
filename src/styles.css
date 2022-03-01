@@ -58,21 +58,21 @@ h1 {
 }
 #far {
 color:white; 
-text-decoration: none;
+text-decoration: none; 
 
 
 }
 #cels{
 color:white; 
-text-decoration: none; 
+text-decoration:  none; 
 
 }
 #cels:hover {
-    text-decoration: none;
+    text-decoration: none; 
     cursor: pointer;
 }
 #far:hover{
-    text-decoration: none;
+    text-decoration: none; 
     cursor: pointer;  
 }
 
@@ -91,10 +91,14 @@ color: white;
 font-family: Montserrat;
 }
 .link {
+
   font-weight: bold;
   color: purple;
 
 }
-.signoff {
-  color: purple;
+.name {
+
+  color: purple; 
+  display: inline-block;
+
 }
