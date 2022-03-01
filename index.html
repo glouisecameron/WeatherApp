@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
       src="https://kit.fontawesome.com/01c41ce156.js"
-      crossorigin="anonymous"></script>
-      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <title>Weather App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,49 +41,43 @@
                     placeholder="Search city"
                     id="city-input"
                   />
-
                 </div>
                 <div class="col-3">
                   <button type="submit" class="btn btn-primary">
                     <i class="fas fa-search"></i>
-
                   </button>
-         
                 </div>
               </div>
             </div>
           </div>
         </div>
       </form>
-  
 
       <div class="container">
         <br />
-        <h1>Glasgow</h1>
+        <h1 id="city">Glasgow</h1>
         <div class="picture">🌤</div>
 
         <div class="row report">
           <div class="col weather-info">
-           
-            Humidity:<span id = "humid">79</span>%
+            Humidity:<span id="humid">79</span>%
             <br />
-            wind: <span id = "wind">3</span>mph
-
+            Wind: <span id="wind">3</span>mph
           </div>
 
-
           <div class="col temperature-info">
-          <span id = "tValue">11</span> ° <span class="measure">
-          <a href = "#" id = "cels" >C </a> | <a href = "#" id = "far"> F </a></span>
+            <span id="tValue">11</span> °
+            <span class="measure">
+              <a href="#" id="cels">C </a> | <a href="#" id="far"> F </a></span
+            >
 
-         
-            <br /> <span id= "cond">
-            Partly Cloudy </span>
+            <br />
+            <span id="cond"> Partly Cloudy </span>
           </div>
           <div class="col time-info">16.30pm</div>
         </div>
 
-    <button id = "curLoc"> Current Location📍 </button>
+        <button id="curLoc">Current Location📍</button>
 
         <hr />
 
@@ -161,7 +156,10 @@
         </div>
       </div>
     </div>
-    <a href ="https://github.com/glouisecameron/WeatherApp" class = "link">Open source code</a> <div class = "name">By Gemma Louise Cameron </div>
+    <a href="https://github.com/glouisecameron/WeatherApp" class="link"
+      >Open source code</a
+    >
+    <div class="name">By Gemma Louise Cameron</div>
     <script src="src/index.js"></script>
   </body>
 </html>

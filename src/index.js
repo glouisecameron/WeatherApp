@@ -1,8 +1,13 @@
 let currentDate = new Date();
 
 let hour = currentDate.getHours();
+if (hour < 10) {
+  hour = `0${hour}`;
+}
 let minutes = currentDate.getMinutes();
-
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 let day = days[currentDate.getDay()];
 
@@ -24,38 +29,24 @@ let changeButton = document.querySelector("form");
 changeButton.addEventListener("submit", changeCity);
 
 function showTemperature(response) {
-  let city = response.data.name;
-  let temperature = Math.round(response.data.main.temp);
-  let tempElement = document.querySelector("#tValue");
-  tempElement.innerHTML = `${temperature}`;
-  let currentCity = document.querySelector("h1");
-  currentCity.innerHTML = `${city}`;
-  let humidity = response.data.main.humidity;
+  let temperatureElement = document.querySelector("#tValue");
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+
+  let cityElement = document.querySelector("#city");
+  cityElement.innerHTML = response.data.name;
+
+  let conditionElement = document.querySelector("#cond");
+  conditionElement.innerHTML = response.data.weather[0].description;
+
   let humidityElement = document.querySelector("#humid");
-  humidityElement.innerHTML = `${humidity}`;
-  let windSpeed = response.data.wind.speed;
+  humidityElement.innerHTML = response.data.main.humidity;
+
   let windElement = document.querySelector("#wind");
-  windElement.innerHTML = `${windSpeed}`;
-  let condition = response.data.weather[0].main;
-  let weatherCondition = document.querySelector("#cond");
-    weatherCondition.innerHTML = `${condition}`;
-    
-    let icon = response.data.weather.icon;
-    let weatherIcon = document.querySelector("#picture");
-    weatherIcon.innerHTML = `${icon}`;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
 
+  let weatherIcon = document.querySelector("#picture");
+  weatherIcon.innerHTML = response.data.weather.icon;
 }
-
-function toggleC(event) {
-  event.preventDefault();
-  let temperInfo = document.querySelector("#tValue");
-  temperInfo.innerHTML = "11";
-  
-}
- let celsChange = document.querySelector("#cels");
-  celsChange.addEventListener("click", toggleC); 
-
-
 
 function toggleF(event) {
   event.preventDefault();
@@ -65,9 +56,6 @@ function toggleF(event) {
 }
 let farChange = document.querySelector("#far");
 farChange.addEventListener("click", toggleF);
-
-
-
 
 function showPosition(position) {
   let lat = position.coords.latitude;
@@ -82,5 +70,3 @@ function getLocation() {
 }
 let homeButton = document.querySelector("#curLoc");
 homeButton.addEventListener("click", getLocation);
-
-
