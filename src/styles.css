@@ -1,14 +1,10 @@
 .searchbox {
   margin-top: 0px;
+
 }
-body {
-  background: linear-gradient(
-    113.5deg,
-    rgb(234, 234, 234) 22.3%,
-    rgb(201, 234, 211) 56.6%,
-    rgb(255, 180, 189) 90.9%
-  );
-  min-height: 100vh;
+body{
+background: linear-gradient(113.5deg, rgb(234, 234, 234) 22.3%, rgb(201, 234, 211) 56.6%, rgb(255, 180, 189) 90.9%);
+min-height: 100vh
 }
 
 .weather-app {
@@ -47,9 +43,14 @@ h1 {
   font-size: 25px;
 }
 
-.picture {
+#picture {
   text-align: center;
   font-size: 60px;
+}
+
+#cond:first-letter{
+  text-transform: capitalize;
+  
 }
 .weather-info {
   font-size: 16px;
@@ -61,35 +62,38 @@ h1 {
   font-size: 25px;
 }
 #far {
-  color: white;
-  text-decoration: none;
+color:white; 
+text-decoration: none;
+
+
 }
-#cels {
-  color: white;
-  text-decoration: none;
+#cels{
+color:white; 
+text-decoration: none; 
+
 }
 #cels:hover {
-  text-decoration: none;
-  cursor: pointer;
+    text-decoration: none;
+    cursor: pointer;
 }
-#far:hover {
-  text-decoration: none;
-  cursor: pointer;
+#far:hover{
+    text-decoration: none;
+    cursor: pointer;  
 }
 
 #curLoc {
-  display: block;
-  box-shadow: 10px 10px 15px rgba(125, 58, 128, 0.164);
-  text-align: center;
-  margin: 0px 0px 0px 40px;
-  padding: 10px;
-  font-size: 15px;
-  font-weight: bold;
-  border-radius: 20px;
-  border: 2px white;
-  color: white;
+display: block;
+ box-shadow: 10px 10px 15px rgba(125, 58, 128, 0.164);
+text-align: center;
+margin: 0px 0px 0px 40px; 
+padding: 10px;
+font-size: 15px;
+font-weight: bold;
+border-radius: 20px; 
+border:2px white;
+color: white;
   background-image: url(https://images.pexels.com/photos/5245865/pexels-photo-5245865.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-  font-family: Montserrat;
+font-family: Montserrat;
 }
 .link {
   font-weight: bold;
@@ -98,7 +102,3 @@ h1 {
 .name {
   color: purple;
   display: inline-block;
-}
-#cond {
-  text-transform: capitalize;
-}

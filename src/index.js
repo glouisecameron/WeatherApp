@@ -30,32 +30,48 @@ changeButton.addEventListener("submit", changeCity);
 
 function showTemperature(response) {
   let temperatureElement = document.querySelector("#tValue");
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
-
   let cityElement = document.querySelector("#city");
+  let conditionElement = document.querySelector("#cond");
+  let humidityElement = document.querySelector("#humid");
+  let windElement = document.querySelector("#wind");
+  let weatherIcon = document.querySelector("#picture");
+
+  celciusTemperature = response.data.main.temp;
+
+
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
+
   cityElement.innerHTML = response.data.name;
 
-  let conditionElement = document.querySelector("#cond");
   conditionElement.innerHTML = response.data.weather[0].description;
 
-  let humidityElement = document.querySelector("#humid");
   humidityElement.innerHTML = response.data.main.humidity;
 
-  let windElement = document.querySelector("#wind");
   windElement.innerHTML = Math.round(response.data.wind.speed);
 
-  let weatherIcon = document.querySelector("#picture");
   weatherIcon.innerHTML = response.data.weather.icon;
+
+  celciusTemperature = response.data.main.temp;
 }
+ 
+let celciusTemperature = null;
 
 function toggleF(event) {
   event.preventDefault();
   let tempInfo = document.querySelector("#tValue");
-  let farTemp = (tempInfo.innerHTML * 9) / 5 + 32;
+  let farTemp = (celciusTemperature * 9) / 5 + 32;
   tempInfo.innerHTML = Math.round(farTemp);
 }
 let farChange = document.querySelector("#far");
 farChange.addEventListener("click", toggleF);
+
+function toggleC(event) {
+  event.preventDefault();
+  let temperInfo = document.querySelector("#tValue");
+  temperInfo.innerHTML = celciusTemperature;
+}
+let celsChange = document.querySelector("#cels");
+celsChange.addEventListener("click", toggleC);
 
 function showPosition(position) {
   let lat = position.coords.latitude;
