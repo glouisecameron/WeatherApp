@@ -64,21 +64,27 @@ h1 {
 #far {
 color:white; 
 text-decoration: none;
-
-
 }
+
 #cels{
 color:white; 
 text-decoration: none; 
 
 }
-#cels:hover {
+#cels.active {
     text-decoration: none;
     cursor: pointer;
+    color: darkgray; 
+    
+    
 }
-#far:hover{
+#far.active{
     text-decoration: none;
     cursor: pointer;  
+    color: darkgray
+    
+  ;
+  
 }
 
 #curLoc {

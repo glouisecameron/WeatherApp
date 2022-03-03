@@ -21,7 +21,7 @@ function changeCity(event) {
   let h1 = document.querySelector("h1");
   h1.innerHTML = `${cityInput.value}`;
   let apiKey = "8fe09840c8f6529695672e7366eacd10";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&units=metric&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(showTemperature);
 }
 
@@ -38,15 +38,10 @@ function showTemperature(response) {
 
   celciusTemperature = response.data.main.temp;
 
-
   temperatureElement.innerHTML = Math.round(celciusTemperature);
-
   cityElement.innerHTML = response.data.name;
-
   conditionElement.innerHTML = response.data.weather[0].description;
-
   humidityElement.innerHTML = response.data.main.humidity;
-
   windElement.innerHTML = Math.round(response.data.wind.speed);
 
   weatherIcon.setAttribute(
@@ -61,6 +56,8 @@ let celciusTemperature = null;
 
 function toggleF(event) {
   event.preventDefault();
+    celsChange.classList.remove("active");
+  farChange.classList.add("active");
   let tempInfo = document.querySelector("#tValue");
   let farTemp = (celciusTemperature * 9) / 5 + 32;
   tempInfo.innerHTML = Math.round(farTemp);
@@ -70,6 +67,8 @@ farChange.addEventListener("click", toggleF);
 
 function toggleC(event) {
   event.preventDefault();
+    farChange.classList.remove("active");
+  celsChange.classList.add("active");
   let temperInfo = document.querySelector("#tValue");
     temperInfo.innerHTML = Math.round(celciusTemperature);
 }
@@ -90,3 +89,4 @@ function getLocation() {
 }
 let homeButton = document.querySelector("#curLoc");
 homeButton.addEventListener("click", getLocation);
+
