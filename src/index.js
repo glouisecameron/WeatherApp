@@ -49,7 +49,10 @@ function showTemperature(response) {
 
   windElement.innerHTML = Math.round(response.data.wind.speed);
 
-  weatherIcon.innerHTML = response.data.weather.icon;
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 
   celciusTemperature = response.data.main.temp;
 }
@@ -68,8 +71,9 @@ farChange.addEventListener("click", toggleF);
 function toggleC(event) {
   event.preventDefault();
   let temperInfo = document.querySelector("#tValue");
-  temperInfo.innerHTML = celciusTemperature;
+    temperInfo.innerHTML = Math.round(celciusTemperature);
 }
+  
 let celsChange = document.querySelector("#cels");
 celsChange.addEventListener("click", toggleC);
 
