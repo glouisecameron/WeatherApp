@@ -20,10 +20,17 @@ function changeCity(event) {
   let cityInput = document.querySelector("#city-input");
   let h1 = document.querySelector("h1");
   h1.innerHTML = `${cityInput.value}`;
+
+  searchCity(cityInput.value);
+}
+
+function searchCity(city) {
   let apiKey = "8fe09840c8f6529695672e7366eacd10";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(showTemperature);
 }
+
+searchCity("Glasgow");
 
 let changeButton = document.querySelector("form");
 changeButton.addEventListener("submit", changeCity);
@@ -39,9 +46,13 @@ function showTemperature(response) {
   celciusTemperature = response.data.main.temp;
 
   temperatureElement.innerHTML = Math.round(celciusTemperature);
+
   cityElement.innerHTML = response.data.name;
+
   conditionElement.innerHTML = response.data.weather[0].description;
+
   humidityElement.innerHTML = response.data.main.humidity;
+
   windElement.innerHTML = Math.round(response.data.wind.speed);
 
   weatherIcon.setAttribute(
@@ -51,12 +62,11 @@ function showTemperature(response) {
 
   celciusTemperature = response.data.main.temp;
 }
- 
-let celciusTemperature = null;
 
+let celciusTemperature = null;
 function toggleF(event) {
   event.preventDefault();
-    celsChange.classList.remove("active");
+  celsChange.classList.remove("active");
   farChange.classList.add("active");
   let tempInfo = document.querySelector("#tValue");
   let farTemp = (celciusTemperature * 9) / 5 + 32;
@@ -67,12 +77,11 @@ farChange.addEventListener("click", toggleF);
 
 function toggleC(event) {
   event.preventDefault();
-    farChange.classList.remove("active");
+  farChange.classList.remove("active");
   celsChange.classList.add("active");
   let temperInfo = document.querySelector("#tValue");
-    temperInfo.innerHTML = Math.round(celciusTemperature);
+  temperInfo.innerHTML = Math.round(celciusTemperature);
 }
-  
 let celsChange = document.querySelector("#cels");
 celsChange.addEventListener("click", toggleC);
 
@@ -89,4 +98,3 @@ function getLocation() {
 }
 let homeButton = document.querySelector("#curLoc");
 homeButton.addEventListener("click", getLocation);
-

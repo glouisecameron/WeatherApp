@@ -48,7 +48,7 @@ h1 {
   font-size: 60px;
 }
 
-#cond:first-letter{
+#cond.first-letter{
   text-transform: capitalize;
   
 }
@@ -62,28 +62,26 @@ h1 {
   font-size: 25px;
 }
 #far {
-color:white; 
+color:darkgray; 
 text-decoration: none;
 }
 
 #cels{
-color:white; 
+color:darkgray; 
 text-decoration: none; 
 
 }
 #cels.active {
     text-decoration: none;
     cursor: pointer;
-    color: darkgray; 
-    
-    
+    color: white; 
+  
 }
 #far.active{
     text-decoration: none;
     cursor: pointer;  
-    color: darkgray
+    color: white;
     
-  ;
   
 }
 
