@@ -48,10 +48,10 @@ h1 {
   font-size: 60px;
 }
 
-#cond.first-letter{
-  text-transform: capitalize;
-  
+#cond:first-letter{
+  text-transform: capitalize; 
 }
+
 .weather-info {
   font-size: 16px;
 }
