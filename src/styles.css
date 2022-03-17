@@ -107,7 +107,10 @@ font-family: Montserrat;
 .link {
   font-weight: bold;
   color: purple;
+  text-decoration: none;
 }
 .name {
   color: purple;
   display: inline-block;
+  font-size: 20px;
+}

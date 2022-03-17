@@ -95,6 +95,7 @@ function showTemperature(response) {
   );
 
   celciusTemperature = response.data.main.temp;
+
 }
 
 let celciusTemperature = null;
