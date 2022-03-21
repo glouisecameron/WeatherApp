@@ -1,22 +1,28 @@
-let currentDate = new Date();
+function formatDate(timestamp) {
 
-let hour = currentDate.getHours();
-if (hour < 10) {
-  hour = `0${hour}`;
-}
-let minutes = currentDate.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-let day = days[currentDate.getDay()];
+  let date = new Date(timestamp);
 
-let timeInfo = document.querySelector(".time-info");
-
-timeInfo.innerHTML = `${day} ${hour}:${minutes}`;
-days.forEach(function (day) {
+  let hours = currentDate.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = currentDate.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = days[currentDate.getDay()];
+  return `${day} ${hours}:${minutes}`;
   
-})
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+
+  return days[day];
+}
 
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast")
