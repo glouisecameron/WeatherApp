@@ -25,13 +25,13 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  let forecastElement = document.querySelector("#forecast")
-let forecastHTML = `<div class="row">`;
-  days.forEach(function (forecastDay, index) {
-    if (index <5)
-    forecastHTML =
-      forecastHTML +
-      `
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  response.data.daily.forEach(function (forecastDay, index) {
+    if (index < 5)
+      forecastHTML =
+        forecastHTML +
+        `
       <div class="col">
       <div class "weather-forecast-date">${formatDay(forecastDay.dt)}</div>
         <img
@@ -42,8 +42,12 @@ let forecastHTML = `<div class="row">`;
           width="40"
         />
         <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max">${math.round(forecastDay.temp.max)}° </span>
-          <span class="weather-forecast-temperature-min">${math.round(forecastDay.temp.min)}°</span>
+          <span class="weather-forecast-temperature-max">${Math.round(
+            forecastDay.temp.max
+          )}° </span>
+          <span class="weather-forecast-temperature-min">${Math.round(
+            forecastDay.temp.min
+          )}°</span>
         </div>
       </div>
   `;
@@ -51,7 +55,6 @@ let forecastHTML = `<div class="row">`;
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  
 }
 
 function getForecast(coordinates) {
